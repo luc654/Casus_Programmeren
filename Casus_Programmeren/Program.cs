@@ -1,3 +1,23 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using System;
+using Casus_Programmeren;
+using System.Collections.Generic;
 
-Console.WriteLine("Hello, World!");
+public class Program
+{
+    public static void Main()
+    {
+        List<string> options = new List<string>
+        {
+            "-h|--help",
+            "-v|--version",
+            "-f|--force",
+            "-o|--output",
+            "-a|--append",
+        };
+
+     
+        terminalHelper helper = new terminalHelper();
+
+        helper.handleTerminal(options);
+    }
+}
