@@ -18,6 +18,6 @@ public class Program
      
         terminalHelper helper = new terminalHelper();
 
-        helper.handleTerminal(options);
+        helper.handleTerminal(options, "Test");
     }
 }

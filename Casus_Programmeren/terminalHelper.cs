@@ -10,6 +10,8 @@ public class terminalHelper
     
     private ConsoleColor defaultOption = ConsoleColor.White;
     private ConsoleColor defaultBackground = ConsoleColor.Black;
+    
+    private ConsoleColor headerColor = ConsoleColor.Green;
 
 
     private void showOptions(List<string> options, int selectedIndex)
@@ -44,19 +46,19 @@ public class terminalHelper
     /// <summary>
     /// Takes a list<string> of options, returns the selected option index (int)
     /// </summary>
-    public int handleTerminal(List<string> options)
+    public int handleTerminal(List<string> options, string title)
     {
         int selectedIndex = 0;
         bool selected = false;
         int listLength = options.Count;
         
-
-
+    
         while (!selected)
         {
 
-            
             clearDisplay();
+            
+            displayTitle(title);
         
             showOptions(options, selectedIndex);
             ConsoleKeyInfo key = Console.ReadKey(true);
@@ -87,5 +89,20 @@ public class terminalHelper
         }
         
         return selectedIndex;
+    }
+
+    private void displayTitle(string title)
+    {
+
+        Console.ForegroundColor = headerColor;
+        
+        Console.WriteLine("=================");
+        Console.WriteLine(title);
+        Console.WriteLine("=================");
+        
+        Console.WriteLine();
+        
+        Console.ResetColor();
+
     }
 }
