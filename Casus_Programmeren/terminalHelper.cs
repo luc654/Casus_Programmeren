@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.Swift;
 
 namespace Casus_Programmeren;
 
@@ -12,7 +13,11 @@ public class terminalHelper
     private ConsoleColor defaultBackground = ConsoleColor.Black;
     
     private ConsoleColor headerColor = ConsoleColor.Green;
-
+    private ConsoleColor notificationColor = ConsoleColor.Yellow;
+    
+    private string title = "Casus Programmeren";
+    private string description = "";
+    private string notification = "";
 
     private void showOptions(List<string> options, int selectedIndex)
     {
@@ -44,22 +49,25 @@ public class terminalHelper
     }
 
     /// <summary>
-    /// Takes a list<string> of options, returns the selected option index (int)
+    /// Takes a list of string of options, returns the selected option index (int)
     /// </summary>
-    public int handleTerminal(List<string> options, string title)
+    public int handleTerminal(List<string> options, string title="", string description="", string notification="")
     {
         int selectedIndex = 0;
         bool selected = false;
         int listLength = options.Count;
-        
+        setTitle(title);
+        setDescription(description);
+        setNotification(notification);
     
         while (!selected)
         {
 
             clearDisplay();
             
-            displayTitle(title);
-        
+            displayTitle();
+            displayMeta();
+            
             showOptions(options, selectedIndex);
             ConsoleKeyInfo key = Console.ReadKey(true);
 
@@ -91,18 +99,58 @@ public class terminalHelper
         return selectedIndex;
     }
 
-    private void displayTitle(string title)
+    private void displayTitle()
     {
 
+        if (title.Length > 0)
+        {
+            
         Console.ForegroundColor = headerColor;
         
         Console.WriteLine("=================");
         Console.WriteLine(title);
         Console.WriteLine("=================");
         
-        Console.WriteLine();
-        
         Console.ResetColor();
+        }
 
+    }
+
+    public void setTitle(string title)
+    {
+        this.title = title;
+    }
+
+    private void displayMeta()
+    {
+        if (description.Length > 0)
+        {
+            Console.ForegroundColor = defaultOption;
+            Console.BackgroundColor = defaultBackground;
+            
+            Console.Write(description);
+            
+            Console.ResetColor();
+        }
+
+        if (notification.Length > 0)
+        {
+            Console.ForegroundColor = notificationColor;
+            Console.BackgroundColor = defaultBackground;
+            Console.Write($"\t{notification}");
+            Console.ResetColor();
+        }
+        Console.WriteLine();
+        Console.WriteLine();
+    }
+
+    public void setDescription(string description)
+    {
+        this.description = description;
+    }
+    
+    public void setNotification(string notification)
+    {
+        this.notification = notification;
     }
 }
