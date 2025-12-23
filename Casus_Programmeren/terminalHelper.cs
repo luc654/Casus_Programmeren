@@ -58,7 +58,16 @@ public class terminalHelper
         int listLength = options.Count;
         setTitle(title);
         setDescription(description);
+        
+        // Handle eloquent notification model
+        if (notification.Length > 0)
+        {
         setNotification(notification);
+        } else if (Program.GlobalContext.notification.Length > 0)
+        {
+            setNotification(Program.GlobalContext.notification);
+            Program.GlobalContext.notification = "";
+        }
     
         while (!selected)
         {
