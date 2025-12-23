@@ -2,21 +2,31 @@ namespace Casus_Programmeren;
 
 public class Reservation
 {
-    public string Uid { get; init; }
+    public string Uid { get; }
+    public DateTimeOffset Start { get; }
+    public DateTimeOffset End { get; }
 
-    public DateTimeOffset Start { get; init; }
-    public DateTimeOffset End { get; init; }
+    public string Summary { get; }
+    public string Location { get; }
+    public IReadOnlyList<string> Attendees { get; }
 
-    public TimeZoneInfo TimeZone { get; init; }
-
-    public string Location { get; init; }
-    public string Summary { get; init; }
-
-    public IReadOnlyList<string> Attendees { get; init; }
-
-    public DateTimeOffset CreatedAt { get; init; }
-
-
+    public Reservation(
+        string uid,
+        DateTimeOffset start,
+        DateTimeOffset end,
+        string summary,
+        IReadOnlyList<string> attendees,
+        string location)
+    {
+        Uid = uid;
+        Start = start;
+        End = end;
+        Summary = summary;
+        Attendees = attendees;
+        Location = location;
+    }
+    
+    
     public TimeParts getTime()
     {
         return new TimeParts
