@@ -25,7 +25,13 @@ public class DataLoader
         
         // Remove previously loaded files from list.
         files.RemoveAll(file => Program.GlobalContext.loadedFiles.Contains(file));
-        
+
+        if (files.Count == 0)
+        {
+            Program.GlobalContext.notification = "Geen files te importeren!";
+            return;
+
+        }
         
         terminalHelper helper = new terminalHelper();
         
