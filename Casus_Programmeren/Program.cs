@@ -73,6 +73,8 @@ public class Program
 
 
         public static List<string> loadedFiles { get; } = new List<string>();
+        
+        public static string notification {get; set;} = "";
     }
 
 }
