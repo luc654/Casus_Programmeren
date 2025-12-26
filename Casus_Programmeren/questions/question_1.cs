@@ -10,8 +10,8 @@ public class question_1
         string roomNumber = "";
         string roomVolume = "";
         string capacity = "";
-        string longitude = "";
-        string latitude = "";
+        string longitude = "0";
+        string latitude = "0";
         
          // Get input values    
          terminalHelper helper = new terminalHelper();
