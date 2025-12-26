@@ -34,7 +34,7 @@ public class question_1
              longitude = helper.handleQuestion("Longitude (optioneel):", true);
          } while (validateLongitude(longitude));
          do {
-             longitude = helper.handleQuestion("Latitude (optioneel):", true);
+             latitude = helper.handleQuestion("Latitude (optioneel):", true);
          } while (validateLatitude(longitude));
          
          
