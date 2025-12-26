@@ -35,7 +35,7 @@ public class question_1
          } while (validateLongitude(longitude));
          do {
              latitude = helper.handleQuestion("Latitude (optioneel):", true);
-         } while (validateLatitude(longitude));
+         } while (validateLatitude(latitude));
          
          
          Room room = new Room(int.Parse(roomNumber), naam,  float.Parse(roomVolume), int.Parse(capacity), Double.Parse(latitude), Double.Parse(longitude));
