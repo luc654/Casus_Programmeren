@@ -31,14 +31,16 @@ public class Room
     private int roomNumber;
     private string roomName;
     private float roomVolume;
+    private int capacity;
     private GeoLocation geoLocation;
     
-    public Room(int  roomNumber, string roomName, float roomVolume, double latitude, double longitude)
+    public Room(int  roomNumber, string roomName, float roomVolume, int capacity, double latitude, double longitude)
     {
         
         this.roomNumber = roomNumber;
         this.roomName = roomName;
         this.roomVolume = roomVolume;
+        this.capacity = capacity;
         this.geoLocation = new GeoLocation(latitude, longitude);
     }
 
