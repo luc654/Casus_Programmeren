@@ -36,9 +36,22 @@ public class question_1
          do {
              latitude = helper.handleQuestion("Latitude (optioneel):", true);
          } while (validateLatitude(latitude));
+
+
+        // Source - https://stackoverflow.com/questions/1167361/how-do-i-convert-an-enum-to-a-list-in-c
+        // Posted by Jake Pearson, modified by community. See post 'Timeline' for change history
+        // Retrieved 2025-12-26, License - CC BY-SA 3.0
+        List<string> buildings = Enum.GetValues(typeof(Building))
+            .Cast<Building>()
+            .Select(b => b.ToString())
+            .ToList();
+
+        int buildingNumber = helper.handleTerminal(buildings);
+
+        Building building = (Building)Enum.Parse(typeof(Building), buildings[buildingNumber]);
+
          
-         
-         Room room = new Room(int.Parse(roomNumber), naam,  float.Parse(roomVolume), int.Parse(capacity), Double.Parse(latitude), Double.Parse(longitude));
+         Room room = new Room(roomNumber, naam,  float.Parse(roomVolume), int.Parse(capacity), Double.Parse(latitude), Double.Parse(longitude), building);
          Program.GlobalContext.Rooms.addRoom(room);
          
     }

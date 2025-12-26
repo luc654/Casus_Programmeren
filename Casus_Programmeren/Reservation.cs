@@ -8,6 +8,8 @@ public class Reservation
 
     public string Summary { get; }
     public string Location { get; }
+    
+    public Building Building { get; }
     public IReadOnlyList<string> Attendees { get; }
 
     public Reservation(
@@ -16,7 +18,8 @@ public class Reservation
         DateTimeOffset end,
         string summary,
         IReadOnlyList<string> attendees,
-        string location)
+        string location,
+        Building building)
     {
         Uid = uid;
         Start = start;
@@ -24,6 +27,7 @@ public class Reservation
         Summary = summary;
         Attendees = attendees;
         Location = location;
+        Building = building;
     }
     
     

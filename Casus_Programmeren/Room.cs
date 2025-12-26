@@ -24,17 +24,23 @@ public class OxygenResult
     public double MaxHours { get; set; }
 }
 
-
+public enum Building
+{
+    Spectrum,
+    Prisma
+}
 public class Room
 {
     
-    private int roomNumber { get; init; }
-    private string roomName  { get; init; }
-    private float roomVolume   { get; init; }
-    private int capacity   { get; init; }
-    private GeoLocation geoLocation  { get; init; }
+    public string roomNumber { get; init; }
+    public string roomName  { get; init; }
+    public float roomVolume   { get; init; }
+    public int capacity   { get; init; }
+    public GeoLocation geoLocation  { get; init; }
     
-    public Room(int  roomNumber, string roomName, float roomVolume, int capacity, double latitude, double longitude)
+    public Building building { get; init; }
+    
+    public Room(string roomNumber, string roomName, float roomVolume, int capacity, double latitude, double longitude,  Building building)
     {
         
         this.roomNumber = roomNumber;
@@ -42,9 +48,20 @@ public class Room
         this.roomVolume = roomVolume;
         this.capacity = capacity;
         this.geoLocation = new GeoLocation(latitude, longitude);
+        this.building = building;
     }
 
+    public string getFullName()
+    {
+        return $"{building.ToString()} - {roomNumber}";
+    }
 
+    /// <summary>
+    /// Get total amount of oxygen used, Hours remaining and max hours of oxygen supply based on room volume (local), amount of people and duration of hours (external).
+    /// </summary>
+    /// <param name="people"></param>
+    /// <param name="hours"></param>
+    /// <returns>OxygenResult class</returns>
     public OxygenResult getOxygenUse(int people, double hours)
     {
         double idleOxygenHour = 30;

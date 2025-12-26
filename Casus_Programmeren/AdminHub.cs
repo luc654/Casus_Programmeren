@@ -10,7 +10,7 @@ public class AdminHub
     {
         List<string> options = new List<string>
         {
-            "Ruimte reserveren",
+            "Ruimte toevoegen",
             "Zuurstof berekenen",
             "Rekenregels aanpassen",
             "Kosten van ruimte berekenen",
@@ -43,7 +43,7 @@ public class AdminHub
                 question_1.addRoom();
                 break;
             case 1:
-                Console.WriteLine("Tuesday");
+                Question_2.question2();
                 break;
             case 2:
                 Console.WriteLine("Wednesday");

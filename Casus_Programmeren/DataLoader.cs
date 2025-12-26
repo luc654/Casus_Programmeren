@@ -79,6 +79,8 @@ public class DataLoader
         string uid = "";
         string summary = "";
         string location = "";
+        string building = "";
+        Building rBuilding = Building.Spectrum;
         var attendees = new List<string>();
         DateTimeOffset start = default;
         DateTimeOffset end = default;
@@ -95,7 +97,11 @@ public class DataLoader
             }
             else if (line.StartsWith("LOCATION:"))
             {
-                location = line.Split(':')[1];
+                string buildinglocation = line.Split(':')[1];
+                building =  buildinglocation.Split(' ')[0];
+                
+                int index = buildinglocation.IndexOf(' ');
+                location = buildinglocation.Substring(index + 1);
             }
             else if (line.StartsWith("DTSTART"))
             {
@@ -114,13 +120,22 @@ public class DataLoader
             }
         }
 
+        if (building == "P")
+        {
+            rBuilding = Building.Prisma;
+        } else if (building == "S")
+        {
+            rBuilding = Building.Spectrum;
+        }
+
         Reservation reservation = new Reservation(
             uid,
             start,
             end,
             summary,
             attendees,
-            location
+            location,
+            rBuilding
         );
         
     }
