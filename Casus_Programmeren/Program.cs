@@ -12,8 +12,8 @@ public class Program
         
         List<string> options = new List<string>
         {
-            "Als student verder gaan",
             "Als beheerder verder gaan",
+            "Als student verder gaan",
             "Data inladen",
         };
 
@@ -29,15 +29,15 @@ public class Program
         {
             case 0:
             {
-                GlobalContext.CurrentUserRole = UserRole.Student;
-                Hub hub = new Hub();
+                GlobalContext.CurrentUserRole = UserRole.Admin;
+                AdminHub.loop();
                 break;
             }
 
             case 1:
             {
-                GlobalContext.CurrentUserRole = UserRole.Admin;
-                Hub hub = new Hub();
+                GlobalContext.CurrentUserRole = UserRole.Student;
+                UserHub.loop();
                 break;
             }
 
