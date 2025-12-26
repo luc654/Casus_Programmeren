@@ -48,11 +48,16 @@ public class question_1
     {
         if (float.TryParse(roomVolume, out float output))
         {
+            if(output <= 0)
+            {
+                Program.GlobalContext.notification = "Volume moet een positief getal zijn";
+                return true;
+            }
             return false;
         }
         else
         {
-            Program.GlobalContext.notification = "Waarde moet een getal zijn";
+            Program.GlobalContext.notification = "Volume moet een getal zijn";
             return true;
         }
     }
@@ -61,6 +66,11 @@ public class question_1
     {
         if (int.TryParse(capacity, out int output))
         {
+            if(output <= 0)
+            {
+                Program.GlobalContext.notification = "Capaciteit moet een positief getal zijn";
+                return true;
+            }
             return false;
         }
         else
