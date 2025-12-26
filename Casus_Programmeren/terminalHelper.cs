@@ -108,6 +108,44 @@ public class terminalHelper
         return selectedIndex;
     }
 
+    public string handleQuestion(string question, bool canEmpty=false)
+    {
+        
+        clearDisplay();
+        setTitle(title);
+        setDescription(description);
+        
+
+
+        
+        string answer = string.Empty;
+        while (answer.Length == 0 && !canEmpty)
+        {
+                    
+            clearDisplay();
+            
+            displayTitle();
+            
+            // Handle eloquent notification model
+             if (Program.GlobalContext.notification.Length > 0)
+            {
+                setNotification(Program.GlobalContext.notification);
+                Program.GlobalContext.notification = "";
+            }
+            
+            displayMeta();
+            
+            Console.WriteLine(question);
+            answer = Console.ReadLine();
+
+            if (!canEmpty && answer.Length == 0)
+            {
+                Program.GlobalContext.notification = "Antwoord kan niet leeg zijn";
+            }
+        }
+        return answer;
+    }
+
     private void displayTitle()
     {
 
@@ -127,7 +165,10 @@ public class terminalHelper
 
     public void setTitle(string title)
     {
+        if (title.Length > 0)
+        {
         this.title = title;
+        }
     }
 
     private void displayMeta()
