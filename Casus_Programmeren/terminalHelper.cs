@@ -22,7 +22,9 @@ public class terminalHelper
     private void showOptions(List<string> options, int selectedIndex)
     {
 
+        // start with -1 index to account for incrementing in loop. This is to keep it a 0 based index.
         int index = -1;
+        
         foreach (string entry in options)
         {
             index++;
@@ -107,32 +109,30 @@ public class terminalHelper
 
     public string handleQuestion(string question, bool canEmpty=false)
     {
+        // Prevents notification overflow
+        setNotification("");
         
         clearDisplay();
         setTitle(title);
         setDescription(description);
-        
 
 
         
         string answer = string.Empty;
         while (answer.Length == 0 && !canEmpty)
         {
-                    
             clearDisplay();
-            
             displayTitle();
-            
-            // Handle eloquent notification model
-             if (Program.GlobalContext.notification.Length > 0)
+
+            if (Program.GlobalContext.notification.Length > 0)
             {
                 setNotification(Program.GlobalContext.notification);
                 Program.GlobalContext.notification = "";
             }
-            
+
             displayMeta();
-            
             Console.WriteLine(question);
+
             answer = Console.ReadLine();
 
             if (!canEmpty && answer.Length == 0)
@@ -140,6 +140,7 @@ public class terminalHelper
                 Program.GlobalContext.notification = "Antwoord kan niet leeg zijn";
             }
         }
+        
         return answer;
     }
 
