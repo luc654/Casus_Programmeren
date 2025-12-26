@@ -119,7 +119,7 @@ public class terminalHelper
 
         
         string answer = string.Empty;
-        while (answer.Length == 0 && !canEmpty)
+        do
         {
             clearDisplay();
             displayTitle();
@@ -135,11 +135,12 @@ public class terminalHelper
 
             answer = Console.ReadLine();
 
-            if (!canEmpty && answer.Length == 0)
+            if (!canEmpty && string.IsNullOrEmpty(answer))
             {
                 Program.GlobalContext.notification = "Antwoord kan niet leeg zijn";
             }
-        }
+
+        } while (!canEmpty && string.IsNullOrEmpty(answer));
         
         return answer;
     }
