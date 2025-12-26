@@ -51,7 +51,7 @@ public class terminalHelper
     /// <summary>
     /// Takes a list of string of options, returns the selected option index (int)
     /// </summary>
-    public int handleTerminal(List<string> options, string title="", string description="", string notification="")
+    public int handleTerminal(List<string> options, string title="", string description="")
     {
         int selectedIndex = 0;
         bool selected = false;
@@ -60,10 +60,7 @@ public class terminalHelper
         setDescription(description);
         
         // Handle eloquent notification model
-        if (notification.Length > 0)
-        {
-        setNotification(notification);
-        } else if (Program.GlobalContext.notification.Length > 0)
+         if (Program.GlobalContext.notification.Length > 0)
         {
             setNotification(Program.GlobalContext.notification);
             Program.GlobalContext.notification = "";
