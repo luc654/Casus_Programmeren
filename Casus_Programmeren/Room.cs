@@ -28,11 +28,11 @@ public class OxygenResult
 public class Room
 {
     
-    private int roomNumber;
-    private string roomName;
-    private float roomVolume;
-    private int capacity;
-    private GeoLocation geoLocation;
+    private int roomNumber { get; init; }
+    private string roomName  { get; init; }
+    private float roomVolume   { get; init; }
+    private int capacity   { get; init; }
+    private GeoLocation geoLocation  { get; init; }
     
     public Room(int  roomNumber, string roomName, float roomVolume, int capacity, double latitude, double longitude)
     {
