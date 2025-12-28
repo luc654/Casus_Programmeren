@@ -49,8 +49,8 @@ public class RoomsLoader
 
             loadedRooms.Add(newRoom);
             Program.GlobalContext.Rooms.addRoom(newRoom);
-            Console.WriteLine($"Successfully loaded: {newRoom.roomName}");
         }
-    
+
+        Program.GlobalContext.notification = $"{loadedRooms.Count} Kamers ingeladen!";
     }
 }
