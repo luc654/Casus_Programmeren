@@ -69,44 +69,74 @@ public class Question_3
         
         foreach (var room in rooms)
         {
-            Console.WriteLine(room.roomNumber);
             roomIds.Add(room.roomNumber);
         }
 
-        Console.ReadLine();
-        int startRoomId = helper.handleTerminal(roomIds, "Route berekenen", "Selecteer uw startpunt");
+        string startRoomTitle;
+        string endRoomTitle;
+        do
+        {
+            startRoomTitle = helper.handleQuestion("Voer Start ruimte nummer in.");
+        } while (validateInput(startRoomTitle));
+        
+        
+        do
+        {
+            endRoomTitle = helper.handleQuestion("Voer Bestemming Ruimte nummer in.");
+        } while (validateInput(endRoomTitle));
+        
+        // Get node ID using title.
+        var nData = data.Nodes.FirstOrDefault(n => n.Title == startRoomTitle);
+        var eData = data.Nodes.FirstOrDefault(n => n.Title == endRoomTitle);
 
-        var nData = data.Nodes.FirstOrDefault(n => n.Id == startRoomId);
-        var jsonid = nodeMap.FirstOrDefault(x => x.Value == nData.Id).Key;
         
-        Console.WriteLine(jsonid);
-        Console.ReadLine();
+        // If one data exists in rooms.json but not in edges.json, or otherwise, this gets thrown
+        if (nData == null || eData == null) 
+        {
+            Program.GlobalContext.notification = "error 500, gebruik google maps...";
+            return;
+        }
         
-        var startNode = nodeMap[1];  // JSON ID 1
-        var endNode = nodeMap[30];   // JSON ID 30
+        // Get nodemap nodeID using the dictionary
+        uint startNodeId = nodeMap[nData.Id];
+        uint endNodeId = nodeMap[eData.Id];
         
-        ShortestPathResult result = graph.Dijkstra(startNode, endNode);
+        ShortestPathResult result = graph.Dijkstra(startNodeId, endNodeId);
 
-        // 4. Check if path exists and log
         if (result.IsFounded)
         {
             var path = result.GetPath();
-            Console.WriteLine($"Path found with distance: {result.Distance}");
-            
+            var index = 0;
             foreach (var internalId in path)
             {
-                // Find the node title in your original data using the mapping
+                index++;
                 var jsonId = nodeMap.FirstOrDefault(x => x.Value == internalId).Key;
                 var nodeData = data.Nodes.FirstOrDefault(n => n.Id == jsonId);
-                Console.WriteLine($"Step: {nodeData?.Title} (ID: {jsonId})");
-            }
+                Console.WriteLine($"stap {index}: Loop richting {nodeData?.Title}");
+            } 
+            Console.WriteLine("Bestemming bevind zich naast u.");
         }
         else
         {
-            Console.WriteLine("No path found between the specified nodes.");
+            Program.GlobalContext.notification = "Geen route gevonden...";
+            return;
         }
 
         Console.ReadLine();
     }
-    
+
+    private static bool validateInput(string input)
+    {
+        int index = Program.GlobalContext.Rooms.getRooms().FindIndex(room => room.roomNumber == input);
+
+        if (index == -1)
+        {
+            Program.GlobalContext.notification = $"Geen kamer gevonden met nummer {input}";
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
