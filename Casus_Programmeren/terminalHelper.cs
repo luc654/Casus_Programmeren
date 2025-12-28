@@ -142,6 +142,11 @@ public class terminalHelper
 
         } while (!canEmpty && string.IsNullOrEmpty(answer));
         
+        if (canEmpty && string.IsNullOrWhiteSpace(answer))
+        {
+            return "0";
+        }
+        
         return answer;
     }
 
