@@ -1,0 +1,77 @@
+{
+  "version": "1.1",
+  "nodes": [
+    { "id": 100, "title": "Receptie" },
+    { "id": 101, "title": "Trap richting loopbrug" },
+    { "id": 102, "title": "Lift Centraal" },
+
+    { "id": 1, "title": "0.005" }, { "id": 2, "title": "0.006" },
+    { "id": 3, "title": "0.007" }, { "id": 4, "title": "0.010" },
+    { "id": 5, "title": "0.011" }, { "id": 6, "title": "0.012" },
+    { "id": 7, "title": "0.014" }, { "id": 8, "title": "0.015" },
+    { "id": 9, "title": "0.016" }, { "id": 10, "title": "0.017" },
+    { "id": 11, "title": "0.019" }, { "id": 12, "title": "0.023" },
+
+    { "id": 20, "title": "0.051" }, { "id": 21, "title": "0.051B" },
+    { "id": 22, "title": "0.053" }, { "id": 23, "title": "0.053A" },
+    { "id": 24, "title": "0.053B" }, { "id": 25, "title": "0.053C" },
+
+    { "id": 30, "title": "0.038" }, { "id": 31, "title": "0.040" },
+    { "id": 32, "title": "0.040A" }, { "id": 33, "title": "0.040B" },
+    { "id": 34, "title": "0.040C" }, { "id": 35, "title": "0.042" },
+    { "id": 36, "title": "0.044" },
+
+    { "id": 40, "title": "0.145" }, { "id": 41, "title": "0.141" },
+    { "id": 42, "title": "0.139" }, { "id": 43, "title": "Academie Hart Diensten" },
+    { "id": 44, "title": "0.135" }, { "id": 45, "title": "0.133" },
+    { "id": 46, "title": "0.131" }, { "id": 47, "title": "0.127" },
+
+    { "id": 200, "title": "Gang Zuid" },
+    { "id": 201, "title": "Gang Oost" },
+    { "id": 202, "title": "Gang West" },
+    { "id": 203, "title": "Gang Noord-Curve" }
+  ],
+  "edges": [
+    { "from": 100, "to": 200, "distance": 5, "bidirectional": true },
+    { "from": 100, "to": 201, "distance": 8, "bidirectional": true },
+    { "from": 100, "to": 202, "distance": 6, "bidirectional": true },
+    { "from": 100, "to": 36, "distance": 4, "bidirectional": true },
+
+    { "from": 200, "to": 2, "distance": 2, "bidirectional": true },
+    { "from": 2, "to": 4, "distance": 3, "bidirectional": true },
+    { "from": 4, "to": 6, "distance": 2, "bidirectional": true },
+    { "from": 6, "to": 7, "distance": 2, "bidirectional": true },
+    { "from": 7, "to": 9, "distance": 2, "bidirectional": true },
+    { "from": 9, "to": 101, "distance": 3, "bidirectional": true },
+    { "from": 101, "to": 10, "distance": 2, "bidirectional": true },
+    { "from": 10, "to": 11, "distance": 3, "bidirectional": true },
+    { "from": 11, "to": 12, "distance": 4, "bidirectional": true },
+
+    { "from": 1, "to": 200, "distance": 3, "bidirectional": true },
+    { "from": 3, "to": 2, "distance": 2, "bidirectional": true },
+    { "from": 5, "to": 4, "distance": 2, "bidirectional": true },
+    { "from": 8, "to": 7, "distance": 2, "bidirectional": true },
+
+    { "from": 36, "to": 35, "distance": 2, "bidirectional": true },
+    { "from": 35, "to": 31, "distance": 3, "bidirectional": true },
+    { "from": 31, "to": 33, "distance": 2, "bidirectional": true },
+    { "from": 33, "to": 34, "distance": 1, "bidirectional": true },
+    { "from": 31, "to": 32, "distance": 2, "bidirectional": true },
+    { "from": 31, "to": 30, "distance": 2, "bidirectional": true },
+
+    { "from": 201, "to": 22, "distance": 4, "bidirectional": true },
+    { "from": 22, "to": 23, "distance": 2, "bidirectional": true },
+    { "from": 22, "to": 25, "distance": 3, "bidirectional": true },
+    { "from": 25, "to": 24, "distance": 2, "bidirectional": true },
+    { "from": 20, "to": 21, "distance": 3, "bidirectional": true },
+    { "from": 21, "to": 201, "distance": 5, "bidirectional": true },
+
+    { "from": 202, "to": 40, "distance": 3, "bidirectional": true },
+    { "from": 40, "to": 41, "distance": 4, "bidirectional": true },
+    { "from": 41, "to": 43, "distance": 3, "bidirectional": true },
+    { "from": 43, "to": 47, "distance": 5, "bidirectional": true },
+    { "from": 47, "to": 46, "distance": 2, "bidirectional": true },
+    { "from": 46, "to": 45, "distance": 2, "bidirectional": true },
+    { "from": 45, "to": 44, "distance": 2, "bidirectional": true }
+  ]
+}

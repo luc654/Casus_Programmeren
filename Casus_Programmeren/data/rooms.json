@@ -1,0 +1,45 @@
+{
+  "rooms": [
+    { "roomNumber": "0.005", "roomName": "Instruction Room S1", "roomVolume": 110.0, "capacity": 24, "geoLocation": { "latitude": 51.9230, "longitude": 6.0100 }, "building": "Spectrum" },
+    { "roomNumber": "0.006", "roomName": "Storage S1", "roomVolume": 25.0, "capacity": 2, "geoLocation": { "latitude": 51.9232, "longitude": 6.0102 }, "building": "Spectrum" },
+    { "roomNumber": "0.007", "roomName": "Instruction Room S2", "roomVolume": 110.0, "capacity": 24, "geoLocation": { "latitude": 51.9230, "longitude": 6.0104 }, "building": "Spectrum" },
+    { "roomNumber": "0.010", "roomName": "Office S1", "roomVolume": 35.0, "capacity": 4, "geoLocation": { "latitude": 51.9232, "longitude": 6.0106 }, "building": "Spectrum" },
+    { "roomNumber": "0.011", "roomName": "Instruction Room S3", "roomVolume": 110.0, "capacity": 24, "geoLocation": { "latitude": 51.9230, "longitude": 6.0108 }, "building": "Spectrum" },
+    { "roomNumber": "0.012", "roomName": "Office S2", "roomVolume": 35.0, "capacity": 4, "geoLocation": { "latitude": 51.9232, "longitude": 6.0110 }, "building": "Spectrum" },
+    { "roomNumber": "0.014", "roomName": "Office S3", "roomVolume": 35.0, "capacity": 4, "geoLocation": { "latitude": 51.9232, "longitude": 6.0112 }, "building": "Spectrum" },
+    { "roomNumber": "0.015", "roomName": "Instruction Room S4", "roomVolume": 110.0, "capacity": 24, "geoLocation": { "latitude": 51.9230, "longitude": 6.0114 }, "building": "Spectrum" },
+    { "roomNumber": "0.016", "roomName": "Office S4", "roomVolume": 35.0, "capacity": 4, "geoLocation": { "latitude": 51.9232, "longitude": 6.0116 }, "building": "Spectrum" },
+    { "roomNumber": "0.017", "roomName": "Meeting Room SE1", "roomVolume": 90.0, "capacity": 15, "geoLocation": { "latitude": 51.9230, "longitude": 6.0118 }, "building": "Spectrum" },
+    { "roomNumber": "0.019", "roomName": "Meeting Room SE2", "roomVolume": 80.0, "capacity": 12, "geoLocation": { "latitude": 51.9230, "longitude": 6.0122 }, "building": "Spectrum" },
+    { "roomNumber": "0.023", "roomName": "Meeting Room SE3", "roomVolume": 80.0, "capacity": 12, "geoLocation": { "latitude": 51.9230, "longitude": 6.0126 }, "building": "Spectrum" },
+
+    { "roomNumber": "REC-01", "roomName": "Receptie", "roomVolume": 450.0, "capacity": 100, "geoLocation": { "latitude": 51.9238, "longitude": 6.0105 }, "building": "Spectrum" },
+    { "roomNumber": "0.044", "roomName": "Cluster Entry North", "roomVolume": 45.0, "capacity": 8, "geoLocation": { "latitude": 51.9242, "longitude": 6.0108 }, "building": "Spectrum" },
+    { "roomNumber": "0.042", "roomName": "Cluster Entry South", "roomVolume": 45.0, "capacity": 8, "geoLocation": { "latitude": 51.9242, "longitude": 6.0111 }, "building": "Spectrum" },
+    { "roomNumber": "0.040", "roomName": "Main Central Office", "roomVolume": 180.0, "capacity": 25, "geoLocation": { "latitude": 51.9238, "longitude": 6.0112 }, "building": "Spectrum" },
+    { "roomNumber": "0.040A", "roomName": "Internal Office A", "roomVolume": 50.0, "capacity": 6, "geoLocation": { "latitude": 51.9238, "longitude": 6.0114 }, "building": "Spectrum" },
+    { "roomNumber": "0.040B", "roomName": "Internal Office B", "roomVolume": 40.0, "capacity": 4, "geoLocation": { "latitude": 51.9240, "longitude": 6.0110 }, "building": "Spectrum" },
+    { "roomNumber": "0.040C", "roomName": "Internal Office C", "roomVolume": 40.0, "capacity": 4, "geoLocation": { "latitude": 51.9239, "longitude": 6.0110 }, "building": "Spectrum" },
+    { "roomNumber": "0.038", "roomName": "Tech Storage", "roomVolume": 50.0, "capacity": 4, "geoLocation": { "latitude": 51.9238, "longitude": 6.0116 }, "building": "Spectrum" },
+
+    { "roomNumber": "0.053", "roomName": "East Corridor Link", "roomVolume": 60.0, "capacity": 10, "geoLocation": { "latitude": 51.9240, "longitude": 6.0145 }, "building": "Spectrum" },
+    { "roomNumber": "0.053A", "roomName": "East Office A", "roomVolume": 55.0, "capacity": 6, "geoLocation": { "latitude": 51.9242, "longitude": 6.0140 }, "building": "Spectrum" },
+    { "roomNumber": "0.053B", "roomName": "East Office B", "roomVolume": 55.0, "capacity": 6, "geoLocation": { "latitude": 51.9250, "longitude": 6.0142 }, "building": "Spectrum" },
+    { "roomNumber": "0.053C", "roomName": "Large Lecture Hall East", "roomVolume": 600.0, "capacity": 120, "geoLocation": { "latitude": 51.9248, "longitude": 6.0155 }, "building": "Spectrum" },
+    { "roomNumber": "0.051", "roomName": "East Wing Tech", "roomVolume": 110.0, "capacity": 15, "geoLocation": { "latitude": 51.9238, "longitude": 6.0152 }, "building": "Spectrum" },
+    { "roomNumber": "0.051B", "roomName": "East Corner Lab", "roomVolume": 180.0, "capacity": 20, "geoLocation": { "latitude": 51.9245, "longitude": 6.0165 }, "building": "Spectrum" },
+
+    { "roomNumber": "0.084", "roomName": "Study Booth 84", "roomVolume": 15.0, "capacity": 1, "geoLocation": { "latitude": 51.9248, "longitude": 6.0100 }, "building": "Spectrum" },
+    { "roomNumber": "0.086", "roomName": "Study Booth 86", "roomVolume": 15.0, "capacity": 1, "geoLocation": { "latitude": 51.9249, "longitude": 6.0102 }, "building": "Spectrum" },
+    { "roomNumber": "0.088", "roomName": "Study Booth 88", "roomVolume": 15.0, "capacity": 1, "geoLocation": { "latitude": 51.9250, "longitude": 6.0104 }, "building": "Spectrum" },
+    { "roomNumber": "0.090", "roomName": "Study Booth 90", "roomVolume": 15.0, "capacity": 1, "geoLocation": { "latitude": 51.9251, "longitude": 6.0106 }, "building": "Spectrum" },
+    { "roomNumber": "0.100", "roomName": "End Curve Office", "roomVolume": 45.0, "capacity": 4, "geoLocation": { "latitude": 51.9253, "longitude": 6.0118 }, "building": "Spectrum" },
+    { "roomNumber": "0.056", "roomName": "North Gate Office", "roomVolume": 55.0, "capacity": 6, "geoLocation": { "latitude": 51.9255, "longitude": 6.0130 }, "building": "Spectrum" },
+
+    { "roomNumber": "0.141", "roomName": "Academie Hart Central", "roomVolume": 220.0, "capacity": 30, "geoLocation": { "latitude": 51.9235, "longitude": 6.0090 }, "building": "Spectrum" },
+    { "roomNumber": "0.145", "roomName": "West Entry Hub", "roomVolume": 80.0, "capacity": 10, "geoLocation": { "latitude": 51.9238, "longitude": 6.0095 }, "building": "Spectrum" },
+    { "roomNumber": "0.135", "roomName": "West Office 135", "roomVolume": 65.0, "capacity": 8, "geoLocation": { "latitude": 51.9230, "longitude": 6.0080 }, "building": "Spectrum" },
+    { "roomNumber": "0.125", "roomName": "West Office 125", "roomVolume": 65.0, "capacity": 8, "geoLocation": { "latitude": 51.9240, "longitude": 6.0080 }, "building": "Spectrum" },
+    { "roomNumber": "0.119", "roomName": "West Corner Office", "roomVolume": 70.0, "capacity": 10, "geoLocation": { "latitude": 51.9248, "longitude": 6.0080 }, "building": "Spectrum" }
+  ]
+}

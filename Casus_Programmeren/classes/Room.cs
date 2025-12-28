@@ -1,4 +1,5 @@
 using System.Runtime.InteropServices.Swift;
+using System.Text.Json.Serialization;
 
 namespace Casus_Programmeren;
 
@@ -6,6 +7,7 @@ namespace Casus_Programmeren;
 
 public readonly struct GeoLocation
 {
+    [JsonConstructor]
     public GeoLocation(double latitude, double longitude)
     {
         this.latitude = latitude;
@@ -32,12 +34,22 @@ public enum Building
 public class Room
 {
     
+    [JsonPropertyName("roomNumber")]
     public string roomNumber { get; init; }
-    public string roomName  { get; init; }
-    public float roomVolume   { get; init; }
-    public int capacity   { get; init; }
-    public GeoLocation geoLocation  { get; init; }
-    
+
+    [JsonPropertyName("roomName")]
+    public string roomName { get; init; }
+
+    [JsonPropertyName("roomVolume")]
+    public float roomVolume { get; init; }
+
+    [JsonPropertyName("capacity")]
+    public int capacity { get; init; }
+
+    [JsonPropertyName("geoLocation")]
+    public GeoLocation geoLocation { get; init; }
+
+    [JsonPropertyName("building")]
     public Building building { get; init; }
     
     public Room(string roomNumber, string roomName, float roomVolume, int capacity, double latitude, double longitude,  Building building)

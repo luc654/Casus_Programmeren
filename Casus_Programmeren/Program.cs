@@ -14,7 +14,8 @@ public class Program
         {
             "Als beheerder verder gaan",
             "Als student verder gaan",
-            "Data inladen",
+            "Reserveringen inladen",
+            "Kamers inladen",
         };
 
         terminalHelper helper = new terminalHelper();
@@ -45,6 +46,13 @@ public class Program
             {
                 DataLoader dataLoader = new DataLoader();
                 dataLoader.Load();
+                break;
+            }
+
+            case 3:
+            {
+                RoomsLoader roomsLoader = new RoomsLoader();
+                roomsLoader.loadRooms();
                 break;
             }
 
