@@ -31,28 +31,32 @@ public enum Building
     Spectrum,
     Prisma
 }
+
+public enum Roomtype
+{
+    Lokaal,
+    Werkruimte,
+    Publiekeruimte
+}
 public class Room
 {
     
-    [JsonPropertyName("roomNumber")]
     public string roomNumber { get; init; }
 
-    [JsonPropertyName("roomName")]
     public string roomName { get; init; }
 
-    [JsonPropertyName("roomVolume")]
     public float roomVolume { get; init; }
 
-    [JsonPropertyName("capacity")]
     public int capacity { get; init; }
 
-    [JsonPropertyName("geoLocation")]
     public GeoLocation geoLocation { get; init; }
 
-    [JsonPropertyName("building")]
     public Building building { get; init; }
     
-    public Room(string roomNumber, string roomName, float roomVolume, int capacity, double latitude, double longitude,  Building building)
+    public Roomtype roomType { get; init; }
+    
+    
+    public Room(string roomNumber, string roomName, float roomVolume, int capacity, double latitude, double longitude,  Building building, Roomtype roomtype=Roomtype.Werkruimte)
     {
         
         this.roomNumber = roomNumber;
@@ -61,6 +65,7 @@ public class Room
         this.capacity = capacity;
         this.geoLocation = new GeoLocation(latitude, longitude);
         this.building = building;
+        this.roomType = roomtype;
     }
 
     public string getFullName()
