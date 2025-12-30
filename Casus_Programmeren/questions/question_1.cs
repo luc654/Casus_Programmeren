@@ -51,12 +51,21 @@ public class question_1
             .Cast<Building>()
             .Select(b => b.ToString())
             .ToList();
-
-        int buildingNumber = helper.handleTerminal(buildings);
-
-        Building building = (Building)Enum.Parse(typeof(Building), buildings[buildingNumber]);
         
-         Room room = new Room(roomNumber, naam,  float.Parse(roomVolume), int.Parse(capacity), Double.Parse(latitude), Double.Parse(longitude), building);
+        List<string> roomTypes = Enum.GetValues(typeof(Roomtype))
+            .Cast<Roomtype>()
+            .Select(b => b.ToString())
+            .ToList();
+
+        helper.setDescription("Selecteer gebouw");
+        int buildingNumber = helper.handleTerminal(buildings);
+        Building building = (Building)Enum.Parse(typeof(Building), buildings[buildingNumber]);
+
+        helper.setDescription("Selecteer Ruimte type");
+        int roomTypeNumber = helper.handleTerminal(roomTypes);
+        Roomtype roomtype = (Roomtype)Enum.Parse(typeof(Roomtype), roomTypes[roomTypeNumber]);
+        
+         Room room = new Room(roomNumber, naam,  float.Parse(roomVolume), int.Parse(capacity), Double.Parse(latitude), Double.Parse(longitude), building, roomtype);
          Program.GlobalContext.Rooms.addRoom(room);
          
     }
