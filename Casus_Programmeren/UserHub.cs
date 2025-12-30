@@ -7,6 +7,8 @@ public class UserHub
     private static bool running = true;
     public static void loop()
     {
+        
+        running = true;
         List<string> options = new List<string>
         {
             "AI Powered Blockchain algorithmic Route Berekening (AI powered)",

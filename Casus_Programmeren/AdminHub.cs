@@ -8,6 +8,8 @@ public class AdminHub
     private static bool running = true;
     public static void loop()
     {
+        
+        running = true;
         List<string> options = new List<string>
         {
             "Ruimte toevoegen",
@@ -49,7 +51,7 @@ public class AdminHub
                 Console.WriteLine("Wednesday");
                 break;
             case 3:
-                Console.WriteLine("Thursday");
+                question_5.quest5();
                 break;
             case 4:
                 Console.WriteLine("Friday");
