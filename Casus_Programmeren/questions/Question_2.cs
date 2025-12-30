@@ -17,7 +17,7 @@ public class Question_2
 
         foreach (var room in Program.GlobalContext.Rooms.getRooms())
         {
-            roomNumbers.Add(room.roomNumber.ToString());        
+            roomNumbers.Add(room.getFullName());        
         }
 
         if (roomNumbers.Count == 0)
