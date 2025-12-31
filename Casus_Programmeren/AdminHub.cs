@@ -54,7 +54,7 @@ public class AdminHub
                 question_5.quest5();
                 break;
             case 4:
-                Console.WriteLine("Friday");
+                Question_6.calculateRental();
                 break;
             case 5:
                 Console.WriteLine("Saturday");
