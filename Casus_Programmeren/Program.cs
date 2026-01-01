@@ -87,7 +87,7 @@ public class Program
     {
         public static UserRole CurrentUserRole { get; set; }
         public static Rooms Rooms { get; } = new Rooms();
-
+        public static Reservations  Reservations { get; } = new Reservations();
 
         public static List<string> loadedFiles { get; } = new List<string>();
         
