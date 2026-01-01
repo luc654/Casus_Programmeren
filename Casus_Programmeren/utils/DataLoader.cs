@@ -88,6 +88,7 @@ public class DataLoader
         DateTimeOffset start = default;
         DateTimeOffset end = default;
 
+        // Not efficient, but works. Checks EACH line of the entry and determines what kind of value it is based on the starting value, e.g. UID: is the Unique Identifier.
         foreach (var line in lines)
         {
             if (line.StartsWith("UID:"))
@@ -140,6 +141,8 @@ public class DataLoader
             location,
             rBuilding
         );
+        
+        Program.GlobalContext.Reservations.addReservation(reservation);
         
     }
 
