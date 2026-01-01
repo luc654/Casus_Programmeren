@@ -14,6 +14,7 @@ public class Program
         {
             "Als beheerder verder gaan",
             "Als student verder gaan",
+            "Als Docent verder gaan",
             "Reserveringen inladen",
             "Kamers inladen",
         };
@@ -44,12 +45,19 @@ public class Program
 
             case 2:
             {
+                GlobalContext.CurrentUserRole = UserRole.Docent;
+                DocentHub.loop();
+                break;
+            }
+            
+            case 3:
+            {
                 DataLoader dataLoader = new DataLoader();
                 dataLoader.Load();
                 break;
             }
 
-            case 3:
+            case 4:
             {
                 RoomsLoader roomsLoader = new RoomsLoader();
                 roomsLoader.loadRooms();
@@ -68,7 +76,8 @@ public class Program
     public enum UserRole
     {
         Student,
-        Admin
+        Admin,
+        Docent
     }
 
     /// <summary>
