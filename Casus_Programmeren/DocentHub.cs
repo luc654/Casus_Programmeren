@@ -15,7 +15,7 @@ public class DocentHub
         List<string> options = new List<string>
         {
             "Ruimte reserveren",
-            "Zuurstof berekenen",
+            "Show all reservations",
             "Rekenregels aanpassen",
             "Kosten van ruimte berekenen",
             "Verhuuraanvraag berekenen",
@@ -45,10 +45,10 @@ public class DocentHub
         switch (decision) 
         {
             case 0:
-                question_1.addRoom();
+                Question_7.reserveRoom();
                 break;
             case 1:
-                Question_2.question2();
+               Program.GlobalContext.Reservations.LogAllReservations();
                 break;
             case 2:
                 Console.WriteLine("Wednesday");

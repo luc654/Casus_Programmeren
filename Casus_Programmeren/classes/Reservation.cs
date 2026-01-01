@@ -9,6 +9,8 @@ public class Reservation
     public string Summary { get; }
     public string Location { get; }
     
+    public string roomNumber { get; }
+    
     public Building Building { get; }
     public IReadOnlyList<string> Attendees { get; }
 
@@ -28,6 +30,7 @@ public class Reservation
         Attendees = attendees;
         Location = location;
         Building = building;
+        roomNumber = Location.Split(' ').Last();
     }
     
     

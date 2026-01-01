@@ -12,6 +12,7 @@
     { "roomNumber": "0.017", "roomName": "Meeting Room SE1", "roomVolume": 90.0, "capacity": 15, "geoLocation": { "latitude": 51.9230, "longitude": 6.0118 }, "building": "Spectrum" },
     { "roomNumber": "0.019", "roomName": "Meeting Room SE2", "roomVolume": 80.0, "capacity": 12, "geoLocation": { "latitude": 51.9230, "longitude": 6.0122 }, "building": "Spectrum" },
     { "roomNumber": "0.023", "roomName": "Meeting Room SE3", "roomVolume": 80.0, "capacity": 12, "geoLocation": { "latitude": 51.9230, "longitude": 6.0126 }, "building": "Spectrum" },
+    { "roomNumber": "0.060", "roomName": "Meeting Room SE4", "roomVolume": 80.0, "capacity": 8, "geoLocation": { "latitude": 51.9230, "longitude": 6.0128 }, "building": "Spectrum" },
 
     { "roomNumber": "REC-01", "roomName": "Receptie", "roomVolume": 450.0, "capacity": 100, "geoLocation": { "latitude": 51.9238, "longitude": 6.0105 }, "building": "Spectrum" },
     { "roomNumber": "0.044", "roomName": "Cluster Entry North", "roomVolume": 45.0, "capacity": 8, "geoLocation": { "latitude": 51.9242, "longitude": 6.0108 }, "building": "Spectrum" },
