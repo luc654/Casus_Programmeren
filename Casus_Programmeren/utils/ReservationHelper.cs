@@ -153,6 +153,111 @@ public class ReservationHelper
     {
         return Guid.NewGuid().ToString("N");
     }
-    
-    
+
+    public int getCurrentOccupants(string date, int hour, Building? building = null)
+    {
+        List<Reservation> reservations = getReservationsFromDate(date);
+        List<Reservation> currentHourReservations = retrieveHourspecificReservations(reservations, hour);
+        List<Room> rooms = reservations2rooms(currentHourReservations);
+        List<Room> filteredRooms = new();
+        if (building != null)
+        {
+            filteredRooms = filterBuilding(rooms, building);
+        }
+        else
+        {
+            filteredRooms = rooms;
+        }
+        int totalOccupants = countOccupants(filteredRooms);
+        return totalOccupants;
+
+
+    }
+
+/// <summary>
+/// Inputs a yyyy-mm-dd date and returns a List of Reservations with START DATE the same as inputted date.
+/// </summary>
+/// <param name="date"></param>
+/// <returns></returns>
+    private List<Reservation> getReservationsFromDate(string date)
+    {
+        
+        DateTime targetDate = DateTime.ParseExact(
+            date,
+            "yyyy-MM-dd",
+            CultureInfo.InvariantCulture
+        );
+        
+        
+        List<Reservation> allReservations = Program.GlobalContext.Reservations.getReservations();
+        List<Reservation> filteredReservations = allReservations.FindAll(r =>
+            r.Start.Date == targetDate.Date
+        );
+        
+        return filteredReservations;
+    }
+
+/// <summary>
+/// Inputs a list of reservations and an integer Hour, returns a List of Reservations with start hour the same as inputted hour
+/// </summary>
+/// <param name="reservations"></param>
+/// <param name="hour"></param>
+/// <returns></returns>
+    private List<Reservation> retrieveHourspecificReservations(List<Reservation> reservations, int hour)
+    {
+        
+        List<Reservation> filteredReservations = reservations.FindAll(r =>
+            r.Start.Hour == hour
+        );
+        return filteredReservations;
+    }
+
+/// <summary>
+/// Inputs a list of reservations, returns a list of rooms. rooms may appear double.
+/// </summary>
+/// <param name="reservations"></param>
+/// <returns></returns>
+    private List<Room> reservations2rooms(List<Reservation> reservations)
+    {
+        List<Room> allRooms = Program.GlobalContext.Rooms.getRooms();
+        List<Room> filteredRooms = new();
+        foreach (Reservation reservation in reservations)
+        {
+            Room matchedRoom = allRooms.Find(r =>
+                r.roomNumber == reservation.roomNumber && r.building == reservation.Building);
+            filteredRooms.Add(matchedRoom);
+        }
+        return filteredRooms;
+    }
+
+/// <summary>
+/// Inputs a list of rooms, counts each room and returns sum of capacity.
+/// </summary>
+/// <param name="rooms"></param>
+/// <returns></returns>
+    private int countOccupants(List<Room> rooms)
+    {
+        int totalOccupants = 0;
+        foreach (Room room in rooms)
+        {
+            totalOccupants += room.capacity;
+        }
+        return totalOccupants;
+    }
+
+/// <summary>
+/// Inputs a list of rooms and a Building building, returns a list of rooms where building is building
+/// </summary>
+/// <param name="rooms"></param>
+/// <param name="building"></param>
+/// <returns></returns>
+private List<Room> filterBuilding(List<Room> rooms, Building? building)
+{
+    if (rooms == null)
+        return new List<Room>();
+
+    return rooms.FindAll(r => r != null && r.building == building);
 }
+
+}
+

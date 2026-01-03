@@ -17,7 +17,7 @@ public class AdminHub
             "Rekenregels aanpassen",
             "Kosten van ruimte berekenen",
             "Verhuuraanvraag berekenen",
-            "Spectrum aanwezigheid",
+            "Aanwezigheid bekijken",
             "bezettingsgraad inzage",
             "Uitloggen"
         };
@@ -57,7 +57,7 @@ public class AdminHub
                 Question_6.calculateRental();
                 break;
             case 5:
-                Console.WriteLine("Saturday");
+                Question_8.seeOccupants();
                 break;
             case 6:
                 Console.WriteLine("Saturday");
