@@ -1,4 +1,5 @@
 using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace Casus_Programmeren.questions;
 
@@ -55,7 +56,7 @@ public class Question_7
         
         return enumBuilding;
     }
-
+    
     private static Room? getRoom(Building building)
     {
         List<string> roomNumbers = new List<string>();
@@ -83,7 +84,23 @@ public class Question_7
 
     private static string getDate()
     {
-        string date = helper.handleQuestion("Voer begin datum in in format 'YYYY-MM-DD'");
+        bool nonValidetime = true;
+        string date;
+        do
+        {
+
+            date = helper.handleQuestion("Voer begin datum in in format 'YYYY-MM-DD'");
+            int hyphenCount = date.Count(x => x == '-');
+            if (hyphenCount == 3)
+            {
+                nonValidetime = false;
+            }
+            else
+            {
+                Program.GlobalContext.notification = "Voer een valide datum in";
+            }
+        } while (nonValidetime);
+        
         return date;
     }
     
