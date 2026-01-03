@@ -13,8 +13,9 @@ public class Question_7
         List<string> terugknop = new List<string>() { "terug" };
 
         Building selectedBuilding = getBuildingtype();
-        
-        Room room =  getRoom(selectedBuilding);
+
+        int targetCapacity = getCapacity();
+        Room room =  getRoom(selectedBuilding, targetCapacity);
         if (room == null) return;
 
         string date = getDate();
@@ -56,15 +57,26 @@ public class Question_7
         
         return enumBuilding;
     }
+
+    private static int getCapacity()
+    {
+        string capacity;
+        do
+        {
+            capacity = helper.handleQuestion("Wat moet de capaciteit van de ruimte zijn?");
+        } while (validate(capacity));
+        
+        return int.Parse(capacity);
+    }
     
-    private static Room? getRoom(Building building)
+    private static Room? getRoom(Building building, int targetCapacity)
     {
         List<string> roomNumbers = new List<string>();
         
         
         foreach (var room in Program.GlobalContext.Rooms.getRooms())
         {
-            if(room.building == building) roomNumbers.Add(room.roomNumber);        
+            if(room.building == building && room.capacity == targetCapacity) roomNumbers.Add(room.roomNumber);        
         }
 
         if (roomNumbers.Count == 0)
@@ -91,7 +103,7 @@ public class Question_7
 
             date = helper.handleQuestion("Voer begin datum in in format 'YYYY-MM-DD'");
             int hyphenCount = date.Count(x => x == '-');
-            if (hyphenCount == 3)
+            if (hyphenCount == 2)
             {
                 nonValidetime = false;
             }
@@ -127,5 +139,21 @@ public class Question_7
         );
     }
 
-
+    private static bool validate(string value)
+    {
+        if (int.TryParse(value, out int output))
+        {
+            if(output <= 0)
+            {
+                Program.GlobalContext.notification = "Waarde moet een positief getal zijn";
+                return true;
+            }
+            return false;
+        }
+        else
+        {
+            Program.GlobalContext.notification = "Waarde moet een heel getal zijn";
+            return true;
+        }
+    }
 }
