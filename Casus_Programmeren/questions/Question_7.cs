@@ -10,8 +10,6 @@ public class Question_7
     public static void reserveRoom()
     {
         // Definition of all Buttons.
-        List<string> terugknop = new List<string>() { "terug" };
-
         Building selectedBuilding = getBuildingtype();
 
         int targetCapacity = getCapacity();
