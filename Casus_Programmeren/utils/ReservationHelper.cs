@@ -179,7 +179,7 @@ public class ReservationHelper
 /// </summary>
 /// <param name="date"></param>
 /// <returns></returns>
-    private List<Reservation> getReservationsFromDate(string date)
+    public List<Reservation> getReservationsFromDate(string date)
     {
         
         DateTime targetDate = DateTime.ParseExact(

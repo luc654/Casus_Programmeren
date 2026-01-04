@@ -18,7 +18,7 @@ public class AdminHub
             "Kosten van ruimte berekenen",
             "Verhuuraanvraag berekenen",
             "Aanwezigheid bekijken",
-            "bezettingsgraad inzage",
+            "bezettingsgraad berekenen",
             "Uitloggen"
         };
 
@@ -60,7 +60,7 @@ public class AdminHub
                 Question_8.seeOccupants();
                 break;
             case 6:
-                Console.WriteLine("Saturday");
+                Question_9.calculateOccupancyRate();
                 break;
             case 7:
                 running = false;
