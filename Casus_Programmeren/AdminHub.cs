@@ -18,6 +18,7 @@ public class AdminHub
             "Verhuuraanvraag berekenen",
             "Aanwezigheid bekijken",
             "bezettingsgraad berekenen",
+            "Alle ruimtes bekijken",
             "Uitloggen"
         };
 
@@ -59,6 +60,9 @@ public class AdminHub
                 Question_9.calculateOccupancyRate();
                 break;
             case 6:
+                Program.GlobalContext.Rooms.LogAllRooms();
+                break;
+            case 7:
                 running = false;
                 break;
         }

@@ -9,7 +9,6 @@ public class Question_7
 
     public static void reserveRoom()
     {
-        // Definition of all Buttons.
         Building selectedBuilding = getBuildingtype();
 
         int targetCapacity = getCapacity();
@@ -18,7 +17,7 @@ public class Question_7
 
         string date = getDate();
 
-        bool valideTime = false;
+        bool valideTime;
 
         ReservationHelper reservationHelper = new ReservationHelper();
         ReservationHelper.reservationTime selectedTime;
@@ -38,7 +37,10 @@ public class Question_7
         Program.GlobalContext.Reservations.addReservation(newReservation);
     }
 
-
+/// <summary>
+/// Asks the user for a type of building based on the Buildings enum. Returns a Building
+/// </summary>
+/// <returns></returns>
     private static Building getBuildingtype()
     {
         List<string> buildings = Enum.GetValues(typeof(Building))
@@ -56,6 +58,10 @@ public class Question_7
         return enumBuilding;
     }
 
+    /// <summary>
+    /// Asks the user for the capacity of the room. Returns an integer
+    /// </summary>
+    /// <returns></returns>
     private static int getCapacity()
     {
         string capacity;
@@ -92,6 +98,11 @@ public class Question_7
         return selectedRoom;
     }
 
+    
+    /// <summary>
+    /// Asks the user for a date in YYYY-MM-DD format. Returns this date as a string.
+    /// </summary>
+    /// <returns></returns>
     private static string getDate()
     {
         bool nonValidetime = true;
@@ -114,6 +125,13 @@ public class Question_7
         return date;
     }
     
+    /// <summary>
+    /// Transforms static data into datetimeoffset variable.
+    /// </summary>
+    /// <param name="date"></param>
+    /// <param name="hours"></param>
+    /// <param name="minutes"></param>
+    /// <returns></returns>
     private static DateTimeOffset ToDateTimeOffset( string date, int hours, int minutes)
     {
         DateTime day = DateTime.ParseExact(
