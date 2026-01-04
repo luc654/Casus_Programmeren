@@ -109,7 +109,7 @@ private static int getRequestedOccupancy()
         string room;
         do
         {
-            room = helper.handleQuestion("Voer Start ruimte nummer in.");
+            room = helper.handleQuestion("Welke ruimte heeft voorkeur?");
         } while (validateRoom(room, buildingType));
     
         Room selectedRoom = Program.GlobalContext.Rooms.getRooms().Find(x => x.roomNumber == room && x.building == buildingType);
