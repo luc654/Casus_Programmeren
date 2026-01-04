@@ -12,12 +12,6 @@ public class UserHub
         List<string> options = new List<string>
         {
             "AI Powered Blockchain algorithmic Route Berekening (AI powered)",
-            "Zuurstof berekenen",
-            "Rekenregels aanpassen",
-            "Kosten van ruimte berekenen",
-            "Verhuuraanvraag berekenen",
-            "Spectrum aanwezigheid",
-            "bezettingsgraad inzage",
             "Uitloggen"
         };
 
@@ -44,24 +38,6 @@ public class UserHub
                 Question_3.question3();
                 break;
             case 1:
-                Question_2.question2();
-                break;
-            case 2:
-                Console.WriteLine("Wednesday");
-                break;
-            case 3:
-                Console.WriteLine("Thursday");
-                break;
-            case 4:
-                Console.WriteLine("Friday");
-                break;
-            case 5:
-                Console.WriteLine("Saturday");
-                break;
-            case 6:
-                Console.WriteLine("Saturday");
-                break;
-            case 7:
                 running = false;
                 break;
         }

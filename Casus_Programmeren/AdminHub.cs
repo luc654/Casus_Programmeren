@@ -14,7 +14,6 @@ public class AdminHub
         {
             "Ruimte toevoegen",
             "Zuurstof berekenen",
-            "Rekenregels aanpassen",
             "Kosten van ruimte berekenen",
             "Verhuuraanvraag berekenen",
             "Aanwezigheid bekijken",
@@ -48,21 +47,18 @@ public class AdminHub
                 Question_2.question2();
                 break;
             case 2:
-                Console.WriteLine("Wednesday");
-                break;
-            case 3:
                 question_5.quest5();
                 break;
-            case 4:
+            case 3:
                 Question_6.calculateRental();
                 break;
-            case 5:
+            case 4:
                 Question_8.seeOccupants();
                 break;
-            case 6:
+            case 5:
                 Question_9.calculateOccupancyRate();
                 break;
-            case 7:
+            case 6:
                 running = false;
                 break;
         }
