@@ -16,11 +16,7 @@ public class DocentHub
         {
             "Ruimte reserveren",
             "Show all reservations",
-            "Rekenregels aanpassen",
-            "Kosten van ruimte berekenen",
-            "Verhuuraanvraag berekenen",
-            "Spectrum aanwezigheid",
-            "bezettingsgraad inzage",
+            "Automatisch lokaal reserveren",
             "Uitloggen"
         };
 
@@ -54,18 +50,6 @@ public class DocentHub
                 Console.WriteLine("Wednesday");
                 break;
             case 3:
-                question_5.quest5();
-                break;
-            case 4:
-                Question_6.calculateRental();
-                break;
-            case 5:
-                Console.WriteLine("Saturday");
-                break;
-            case 6:
-                Console.WriteLine("Saturday");
-                break;
-            case 7:
                 running = false;
                 break;
         }
