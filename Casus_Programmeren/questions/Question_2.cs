@@ -3,7 +3,7 @@ namespace Casus_Programmeren.questions;
 public class Question_2
 {
     /// <summary>
-    /// Calculates the oxygen use and remaining oxygen from a room.
+    /// Calculates the oxygen use and remaining oxygen from a room. Uses room subclass to calculate.
     /// </summary>
     /// <remarks>
     /// Requires terminalHelper.

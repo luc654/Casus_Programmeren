@@ -5,6 +5,9 @@ public class question_5
 {
     private static terminalHelper helper = new terminalHelper();
     
+    /// <summary>
+    /// Calculate room cost on day or week basis.
+    /// </summary>
     public static void quest5()
     {
         

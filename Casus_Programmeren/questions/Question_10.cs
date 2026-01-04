@@ -7,7 +7,9 @@ public class Question_10
     private static terminalHelper helper = new terminalHelper();
     private static ReservationHelper _reservationHelper = new ReservationHelper();
 
-
+    /// <summary>
+    /// Automatically plan a reservation using key user inputs
+    /// </summary>
     public static void AutomaticPlanner()
     {
 

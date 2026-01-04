@@ -9,6 +9,9 @@ public class Question_9
 {
     private static terminalHelper helper = new terminalHelper();
 
+    /// <summary>
+    /// Calculates the percantage of used rooms in a given month. Uses both reservations and rooms to calculate occupants.
+    /// </summary>
     public static void calculateOccupancyRate()
     {
         List<string> terugKnop = new List<string>(){"Terug"};

@@ -7,6 +7,10 @@ using Dijkstra.NET.ShortestPath;
 
 public class Question_3
 {
+    
+    /// <summary>
+    /// Handles Dijkstra algorithm. Uses dijkstra.net to calculate and user input te determine from where to where.
+    /// </summary>
     public static void question3()
     {
         // This code is complex enough as is. Due to the complexity of using external libraries and algorithms the decision has been made to not abstract this class any further. Instead, this function has been chaptered

@@ -4,7 +4,7 @@ public class question_1
 {
     
     /// <summary>
-    /// Adds a room to GlobalContext, data is given from Readlines.
+    /// Adds a room to GlobalContext, date is prompted from user.
     /// </summary>
     /// <remarks>
     /// Requires terminalHelper.

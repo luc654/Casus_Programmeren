@@ -15,6 +15,9 @@ public class Question_6
     
     private static terminalHelper helper = new terminalHelper();
 
+    /// <summary>
+    /// Calculate room rental prices
+    /// </summary>
     public static void calculateRental()
     {
         // Definition of all Buttons.

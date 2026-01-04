@@ -7,6 +7,9 @@ public class Question_7
 {
     private static terminalHelper helper = new terminalHelper();
 
+    /// <summary>
+    /// Reserve a room and add it to global context reservationList
+    /// </summary>
     public static void reserveRoom()
     {
         Building selectedBuilding = getBuildingtype();

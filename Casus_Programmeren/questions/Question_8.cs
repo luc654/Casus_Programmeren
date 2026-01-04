@@ -5,7 +5,9 @@ public class Question_8
     
     private static terminalHelper helper = new terminalHelper();
     
-    
+    /// <summary>
+    /// Determines the occupants of a given hour of a given day. Users both reservations and rooms to calculate occupants.
+    /// </summary>
     public static void seeOccupants()
     {
         List<string> terugknop = new List<string>() { "terug" };
