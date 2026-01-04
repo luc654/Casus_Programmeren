@@ -114,11 +114,7 @@ public class Question_7
         return date;
     }
     
-    private static DateTimeOffset ToDateTimeOffset(
-        string date,
-        int hours,
-        int minutes
-    )
+    private static DateTimeOffset ToDateTimeOffset( string date, int hours, int minutes)
     {
         DateTime day = DateTime.ParseExact(
             date,

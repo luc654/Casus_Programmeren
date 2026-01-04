@@ -47,7 +47,7 @@ public class DocentHub
                Program.GlobalContext.Reservations.LogAllReservations();
                 break;
             case 2:
-                Console.WriteLine("Wednesday");
+                Question_10.AutomaticPlanner();
                 break;
             case 3:
                 running = false;

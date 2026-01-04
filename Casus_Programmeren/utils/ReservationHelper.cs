@@ -6,7 +6,7 @@ public class ReservationHelper
 {
     /// <summary>
     /// Takes a Room and a string date in format YYYY-MM-DD.
-    /// Returns WIP
+    /// Returns a list of reservationTimes.
     /// </summary>
     /// <param name="room"></param>
     /// <param name="date"></param>
@@ -48,7 +48,12 @@ public class ReservationHelper
 
 
 
-
+/// <summary>
+/// Inputs a reservationTime of your current attempted Reservation and a list of reservationtimes of already active reservation on that day. Return True if its possible to make the reservation and false if not possible.
+/// </summary>
+/// <param name="inputtedTime"></param>
+/// <param name="reservedDates"></param>
+/// <returns></returns>
     public bool validateInput(reservationTime inputtedTime, List<reservationTime> reservedDates)
     {
         int inputStart = inputtedTime.startHours * 60 + inputtedTime.startMinutes;
@@ -80,6 +85,12 @@ public class ReservationHelper
 
         string questionOne = "Selecteer een begintijd als 'HH:MM'";
         string questionTwo = "Selecteer een eindtijd als 'HH:MM'";
+
+
+        if (reservedDates != null && reservedDates.Count > 0)
+        {
+            
+        
         if (reservedDates.Count > 1)
         {
             for (int i = 0; i < reservedDates.Count - 1; i++)
@@ -106,7 +117,7 @@ public class ReservationHelper
                            Environment.NewLine +
                            $"Tussen {r.endHours:D2}:{r.endMinutes:D2} en 23:59";
         }
-
+        }
 
         
         string startTime = helper.handleQuestion(questionOne);

@@ -85,6 +85,10 @@ public class Question_3
             endRoomTitle = helper.handleQuestion("Voer Bestemming Ruimte nummer in.");
         } while (validateInput(endRoomTitle));
         
+        // ------------
+        //  Calculate shortest path using Dijkstra.net
+        // ------------
+        
         // Get node ID using title.
         var nData = data.Nodes.FirstOrDefault(n => n.Title == startRoomTitle);
         var eData = data.Nodes.FirstOrDefault(n => n.Title == endRoomTitle);
